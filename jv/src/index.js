@@ -35,7 +35,13 @@ import './index.css';
     }
   
     render() {
-      const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+      const winner = calculateWinner(this.state.squares);
+      let status;
+      if(winner){
+        status = 'winner: ' + winner;
+      }else{
+        status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+      }
       
       return (
         <div>
