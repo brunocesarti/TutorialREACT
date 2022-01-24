@@ -57,6 +57,13 @@ import './index.css';
       });
     }
 
+    jumpTo(step){
+      this.setState({
+        stepNumber: step,
+        xIsNext: (step % 2) === 0,
+      });
+    }
+
     constructor(props){
       super(props);
       this.state = {
